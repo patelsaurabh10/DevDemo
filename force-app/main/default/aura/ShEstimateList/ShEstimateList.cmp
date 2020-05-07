@@ -1,0 +1,20 @@
+<aura:component controller="EstimateData">
+    
+    <ltng:require styles="{! $Resource.bootstrap400 + '/bootstrap-4.0.0-dist/css/bootstrap.min.css'}" 
+                  scripts="{!join(',', 
+                           $Resource.jquery341 , 
+                           $Resource.bootstrap400 + '/bootstrap-4.0.0-dist/js/bootstrap.min.js')
+                           }" afterScriptsLoaded="{!c.scriptsLoaded}"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="DataValues" type="Shail_Estimate__c[]" />
+    
+    <div>
+        <aura:iteration var="item" items="{!v.DataValues}">
+            <div>
+                <c:ShEstimateCard selectedValue="" idval="{!item.Id}"/>
+            </div>
+        </aura:iteration>
+    </div>
+    
+</aura:component>

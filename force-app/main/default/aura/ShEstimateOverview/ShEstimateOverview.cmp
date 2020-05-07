@@ -1,0 +1,13 @@
+<aura:component >
+    
+    <ltng:require styles="{! $Resource.bootstrap400 + '/bootstrap-4.0.0-dist/css/bootstrap.min.css'}" 
+                  scripts="{!join(',', 
+                           $Resource.jquery341 , 
+                           $Resource.bootstrap400 + '/bootstrap-4.0.0-dist/js/bootstrap.min.js')
+                           }" afterScriptsLoaded="{!c.scriptsLoaded}"/>
+    
+    <h3>Straight Hail Estimates</h3><br/>
+    
+    <c:ShEstimateList/>
+	
+</aura:component>

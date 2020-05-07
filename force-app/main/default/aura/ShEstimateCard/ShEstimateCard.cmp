@@ -1,0 +1,70 @@
+<aura:component controller="EstimateData">
+    
+    <ltng:require styles="{! $Resource.bootstrap400 + '/bootstrap-4.0.0-dist/css/bootstrap.min.css'}" 
+                  scripts="{!join(',', 
+                           $Resource.jquery341 , 
+                           $Resource.bootstrap400 + '/bootstrap-4.0.0-dist/js/bootstrap.min.js')
+                           }" afterScriptsLoaded="{!c.scriptsLoaded}"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="DataValues" type="Shail_Estimate__c" />
+    <aura:attribute name="idval" type="Id"/>
+    <aura:attribute name="selectedValue" type="String"/>
+    
+    
+    <lightning:card>
+            
+        <aura:set attribute="actions">
+            <lightning:buttonMenu
+              aura:id="menu"
+              alternativeText="Show menu"
+              onselect="{! c.downSelect }"
+            >
+              <lightning:menuItem
+                aura:id="menuItems"
+                label="Edit.."
+                value="Edit"
+                checked="false"
+                iconName="utility:edit"
+              />
+              <lightning:menuItem
+                aura:id="menuItems"
+                label="Delete"
+                value="Delete"
+                checked="false"
+                iconName="utility:delete"
+              />
+              <lightning:menuItem
+                aura:id="menuItems"
+                label="Purchase.."
+                value="Purchase"
+                checked="false"
+                iconName="utility:side_list"
+              />
+            </lightning:buttonMenu>
+          </aura:set>
+        
+        Estimate Name : {!v.DataValues.Estimate_Name__c}<br/>
+        Status : {!v.DataValues.Status__c}<br/>
+        Create Date : <lightning:formattedDateTime value="{!v.DataValues.CreatedDate}"/><br/>
+        Modified date : <lightning:formattedDateTime value="{!v.DataValues.LastModifiedDate}"/><br/>
+        <br/>
+        
+        Total acers : <br/>
+        Total premium : <br/>
+        Total coverage : <br/>
+        <br/>
+    </lightning:card>
+    
+    
+        <!--<div class="card margin-all bg-primary">
+            <div class="card-body">
+                Estimate Name : {!v.DataValues.Estimate_Name__c}<br/>
+                Status : {!v.DataValues.Status__c}<br/>
+                Create Date : <lightning:formattedDateTime value="{!v.DataValues.CreatedDate}"/><br/>
+                Modified date : <lightning:formattedDateTime value="{!v.DataValues.LastModifiedDate}"/><br/>
+                <br/>
+            </div>
+        </div>-->	
+    
+</aura:component>

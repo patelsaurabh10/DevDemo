@@ -1,0 +1,14 @@
+<aura:component>
+    <aura:attribute name="businessId" type="String" />
+    <aura:attribute name="pageContext" type="String" />
+    <aura:attribute name="subscriptionId" type="String" />
+    <aura:attribute name="farmOperationId" type="String" />
+    <aura:attribute name="viewAs" type="String" />
+
+This is the Straight Hail Base component.<br/>
+businessId={!v.businessId}<br/>
+pageContext={!v.pageContext}<br/>
+subscriptionId={!v.subscriptionId}<br/>
+farmOperationId={!v.farmOperationId}<br/>
+viewAs={!v.viewAs}<br/>
+</aura:component>
