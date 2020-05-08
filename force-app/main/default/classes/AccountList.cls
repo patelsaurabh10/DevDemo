@@ -7,7 +7,6 @@ public class AccountList {
             //acc = a.Name;
         }
         system.debug('sdfa'+ acc);
-        system.debug('test');
-        system.debug('new committ');
+        
     }
 }
